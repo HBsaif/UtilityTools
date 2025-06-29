@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Home from './Home';
 import Calculator from './Calculator';
-import Converter from './Converter';
+
 import TodoList from './TodoList';
 import Notes from './Notes';
 import Weather from './Weather';

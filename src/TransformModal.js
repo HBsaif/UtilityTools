@@ -6,7 +6,7 @@ function TransformModal({ image, onTransform, onClose }) {
   const [scaleY, setScaleY] = useState(1);
   const [transformedImage, setTransformedImage] = useState(image);
 
-  const applyTransform = () => {
+  useEffect(() => {
     const img = new Image();
     img.src = image;
     img.onload = () => {
@@ -32,11 +32,7 @@ function TransformModal({ image, onTransform, onClose }) {
 
       setTransformedImage(canvas.toDataURL('image/png'));
     };
-  };
-
-  useEffect(() => {
-    applyTransform();
-  }, [rotation, scaleX, scaleY]);
+  }, [image, rotation, scaleX, scaleY]);
 
   const handleRotate = (angle) => {
     setRotation((prevRotation) => prevRotation + angle);
