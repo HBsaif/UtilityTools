@@ -16,7 +16,13 @@ function Calculator() {
 
   const calculate = () => {
     try {
-      setResult(eval(input).toString());
+      // Basic validation to prevent arbitrary code execution
+      if (!/^([0-9+\-*/.])+$|^$/.test(input)) {
+        setResult('Error');
+        return;
+      }
+      // Using Function constructor as a safer alternative to eval for mathematical expressions
+      setResult(new Function('return ' + input)().toString());
     } catch (error) {
       setResult('Error');
     }

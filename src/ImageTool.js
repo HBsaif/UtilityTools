@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import CropModal from './CropModal';
 import TransformModal from './TransformModal';
 
