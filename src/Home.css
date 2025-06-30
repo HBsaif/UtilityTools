@@ -37,52 +37,50 @@
   color: #343a40;
 }
 
-/* Tab-like styling for Accordion */
-.accordion-item {
-  border: none;
-  margin-bottom: 10px;
+/* Facebook-like Tab Styling */
+.nav-tabs {
+  border-bottom: none; /* Remove default border */
+  display: flex;
+  justify-content: center; /* Center the tabs */
+  margin-bottom: 1.5rem;
+  background-color: #f0f2f5; /* Light gray background for the tab bar */
+  padding: 0.5rem 0;
+  border-radius: 8px;
 }
 
-.accordion-header {
-  border-bottom: none;
+.nav-tabs .nav-item {
+  margin: 0 5px; /* Space between tabs */
 }
 
-.accordion-button {
-  background-color: #f8f9fa; /* Light background for tabs */
-  color: #495057; /* Darker text color */
-  border: 1px solid #dee2e6;
-  border-radius: 0.25rem 0.25rem 0 0; /* Rounded top corners */
-  padding: 1rem 1.25rem;
-  font-weight: bold;
-  transition: all 0.3s ease;
-  box-shadow: none;
+.nav-tabs .nav-link {
+  border: none; /* Remove default border */
+  border-radius: 6px; /* Slightly rounded corners for tabs */
+  padding: 0.75rem 1.25rem;
+  color: #65676b; /* Dark gray text for inactive tabs */
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  background-color: transparent; /* Transparent background by default */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.accordion-button:not(.collapsed) {
-  color: #007bff; /* Active tab color */
-  background-color: #e9ecef; /* Slightly darker background for active tab */
-  border-color: #007bff;
-  border-bottom-color: transparent; /* Hide bottom border for active tab */
-  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+.nav-tabs .nav-link:hover {
+  background-color: #e4e6eb; /* Lighter gray on hover */
+  color: #050505; /* Darker text on hover */
 }
 
-.accordion-button:focus {
-  box-shadow: none;
-  border-color: #007bff;
+.nav-tabs .nav-link.active {
+  color: #1877f2; /* Facebook blue for active tab */
+  border-bottom: 3px solid #1877f2; /* Blue underline for active tab */
+  background-color: transparent; /* Keep background transparent */
+  border-radius: 0; /* Remove border-radius for active tab to make underline clean */
 }
 
-.accordion-button::after {
-  display: none; /* Hide default arrow icon */
-}
-
-.accordion-collapse.collapse:not(.show) {
-  border-top: 1px solid #dee2e6; /* Add a top border when collapsed */
-}
-
-.accordion-body {
-  border: 1px solid #dee2e6;
-  border-top: none;
-  border-radius: 0 0 0.25rem 0.25rem; /* Rounded bottom corners */
+.tab-content {
+  border: none; /* Remove border from content area */
   padding: 1.5rem;
   background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05); /* Subtle shadow for content area */
 }

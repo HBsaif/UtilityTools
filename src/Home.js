@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Home.css';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Ensure Bootstrap CSS is imported
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Tab, Nav } from 'react-bootstrap';
 
 function Home({ onSelectModule }) {
   const categories = [
@@ -69,52 +70,42 @@ function Home({ onSelectModule }) {
 
   const colors = ['#a8e6cf', '#dcedc1', '#ffd3b6', '#ffaaa5', '#ff8b94', '#a2d2ff', '#bde0fe', '#ffc09f', '#ffee93'];
 
+  const [activeTab, setActiveTab] = useState(categories[0].id);
+
   return (
     <div className="home-container">
-      <div className="accordion" id="toolCategoriesAccordion">
-        {categories.map((category, categoryIndex) => (
-          <div className="accordion-item" key={category.id}>
-            <h2 className="accordion-header" id={`heading${category.id}`}>
-              <button
-                className="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target={`#collapse${category.id}`}
-                aria-expanded="false"
-                aria-controls={`collapse${category.id}`}
-              >
-                {category.name}
-              </button>
-            </h2>
-            <div
-              id={`collapse${category.id}`}
-              className="accordion-collapse collapse"
-              aria-labelledby={`heading${category.id}`}
-              data-bs-parent="#toolCategoriesAccordion"
-            >
-              <div className="accordion-body">
-                <div className="row">
-                  {category.modules.map((module, moduleIndex) => (
-                    <div className="col-md-4 mb-4" key={module.id}>
-                      <div
-                        className="card module-card h-100"
-                        style={{ backgroundColor: colors[(categoryIndex * category.modules.length + moduleIndex) % colors.length] }}
-                        onClick={() => onSelectModule(module.id)}
-                      >
-                        <div className="card-body text-center">
-                          <i className={`${module.icon} fa-3x mb-3`}></i>
-                          <h5 className="card-title">{module.title}</h5>
-                          <p className="card-text">{module.description}</p>
-                        </div>
+      <Tab.Container id="tool-tabs" activeKey={activeTab} onSelect={(k) => setActiveTab(k)}>
+        <Nav variant="tabs" className="mb-3">
+          {categories.map((category) => (
+            <Nav.Item key={category.id}>
+              <Nav.Link eventKey={category.id}>{category.name}</Nav.Link>
+            </Nav.Item>
+          ))}
+        </Nav>
+        <Tab.Content>
+          {categories.map((category, categoryIndex) => (
+            <Tab.Pane eventKey={category.id} key={category.id}>
+              <div className="row">
+                {category.modules.map((module, moduleIndex) => (
+                  <div className="col-md-4 mb-4" key={module.id}>
+                    <div
+                      className="card module-card h-100"
+                      style={{ backgroundColor: colors[(categoryIndex * category.modules.length + moduleIndex) % colors.length] }}
+                      onClick={() => onSelectModule(module.id)}
+                    >
+                      <div className="card-body text-center">
+                        <i className={`${module.icon} fa-3x mb-3`}></i>
+                        <h5 className="card-title">{module.title}</h5>
+                        <p className="card-text">{module.description}</p>
                       </div>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
-            </div>
-          </div>
-        ))}
-      </div>
+            </Tab.Pane>
+          ))}
+        </Tab.Content>
+      </Tab.Container>
     </div>
   );
 }
