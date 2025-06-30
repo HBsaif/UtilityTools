@@ -1,6 +1,10 @@
-
 .home-container {
   padding: 50px 0;
+}
+
+.home-container .row {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .module-card {
@@ -31,4 +35,54 @@
 
 .module-card i {
   color: #343a40;
+}
+
+/* Tab-like styling for Accordion */
+.accordion-item {
+  border: none;
+  margin-bottom: 10px;
+}
+
+.accordion-header {
+  border-bottom: none;
+}
+
+.accordion-button {
+  background-color: #f8f9fa; /* Light background for tabs */
+  color: #495057; /* Darker text color */
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem 0.25rem 0 0; /* Rounded top corners */
+  padding: 1rem 1.25rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #007bff; /* Active tab color */
+  background-color: #e9ecef; /* Slightly darker background for active tab */
+  border-color: #007bff;
+  border-bottom-color: transparent; /* Hide bottom border for active tab */
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: #007bff;
+}
+
+.accordion-button::after {
+  display: none; /* Hide default arrow icon */
+}
+
+.accordion-collapse.collapse:not(.show) {
+  border-top: 1px solid #dee2e6; /* Add a top border when collapsed */
+}
+
+.accordion-body {
+  border: 1px solid #dee2e6;
+  border-top: none;
+  border-radius: 0 0 0.25rem 0.25rem; /* Rounded bottom corners */
+  padding: 1.5rem;
+  background-color: #fff;
 }
