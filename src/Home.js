@@ -22,6 +22,7 @@ function Home({ onSelectModule, initialActiveTab }) {
       modules: [
         { id: 'textReverser', icon: 'fas fa-text-width', title: 'Text Reverser', description: 'Reverse the order of characters in a text.' },
         { id: 'wordCounter', icon: 'fas fa-font', title: 'Word Counter', description: 'Count words, characters, and sentences in your text.' },
+        { id: 'textToSpeech', icon: 'fas fa-volume-up', title: 'Text to Speech', description: 'Convert text into spoken words.' },
       ]
     },
     {

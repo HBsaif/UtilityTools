@@ -3,12 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Home from './Home';
 import Calculator from './Calculator';
-
 import TodoList from './TodoList';
 import Notes from './Notes';
 import Weather from './Weather';
 import QrCodeGenerator from './QrCodeGenerator';
 import PasswordGenerator from './PasswordGenerator';
+import TextToSpeech from './TextToSpeech';
 import BmiCalculator from './BmiCalculator';
 import AgeCalculator from './AgeCalculator';
 import TipCalculator from './TipCalculator';
@@ -77,6 +77,8 @@ function App() {
         return <div className="tool-container"><TextReverser /></div>;
       case 'wordCounter':
         return <div className="tool-container"><WordCounter /></div>;
+      case 'textToSpeech':
+        return <div className="tool-container"><TextToSpeech /></div>;
       case 'imageTool':
         return <div className="tool-container"><ImageTool /></div>;
       case 'base64Converter':
