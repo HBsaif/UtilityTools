@@ -31,6 +31,12 @@ import TimestampConverter from './TimestampConverter';
 
 function App() {
   const [selectedModule, setSelectedModule] = useState(null);
+  const [lastActiveTab, setLastActiveTab] = useState('calculatorsConverters'); // Default to the first category
+
+  const handleSelectModule = (moduleId, currentTabId) => {
+    setSelectedModule(moduleId);
+    setLastActiveTab(currentTabId); // Store the current tab when a module is selected
+  };
 
   const renderModule = () => {
     switch (selectedModule) {
@@ -86,7 +92,7 @@ function App() {
       case 'timestampConverter':
         return <div className="tool-container"><TimestampConverter /></div>;
       default:
-        return <Home onSelectModule={setSelectedModule} />;
+        return <Home onSelectModule={handleSelectModule} initialActiveTab={lastActiveTab} />;
     }
   };
 

@@ -1,5 +1,5 @@
 .tool-container {
-  max-width: 450px; /* Reduced width */
+  max-width: 900px; /* Increased width for JSON Formatter */
   margin: 20px auto;
   padding: 20px; /* Reduced padding */
   border-radius: 15px;
@@ -171,4 +171,10 @@
 
 .back-button i {
   margin-right: 5px;
+}
+
+.json-tool-btn {
+  padding: 5px 10px; /* Smaller padding */
+  font-size: 0.9em; /* Smaller font size */
+  white-space: nowrap; /* Ensure text stays on one line */
 }

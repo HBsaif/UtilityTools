@@ -3,7 +3,7 @@ import './Home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Tab, Nav } from 'react-bootstrap';
 
-function Home({ onSelectModule }) {
+function Home({ onSelectModule, initialActiveTab }) {
   const categories = [
     {
       name: 'Calculators & Converters',
@@ -70,7 +70,7 @@ function Home({ onSelectModule }) {
 
   const colors = ['#a8e6cf', '#dcedc1', '#ffd3b6', '#ffaaa5', '#ff8b94', '#a2d2ff', '#bde0fe', '#ffc09f', '#ffee93'];
 
-  const [activeTab, setActiveTab] = useState(categories[0].id);
+  const [activeTab, setActiveTab] = useState(initialActiveTab);
 
   return (
     <div className="home-container">
@@ -91,7 +91,7 @@ function Home({ onSelectModule }) {
                     <div
                       className="card module-card h-100"
                       style={{ backgroundColor: colors[(categoryIndex * category.modules.length + moduleIndex) % colors.length] }}
-                      onClick={() => onSelectModule(module.id)}
+                      onClick={() => onSelectModule(module.id, activeTab)} // Pass activeTab here
                     >
                       <div className="card-body text-center">
                         <i className={`${module.icon} fa-3x mb-3`}></i>
