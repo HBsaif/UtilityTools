@@ -49,7 +49,13 @@ function Home({ onSelectModule }) {
         { id: 'qrcode', icon: 'fas fa-qrcode', title: 'QR Code Generator', description: 'Create QR codes for your links and text.' },
         { id: 'password', icon: 'fas fa-key', title: 'Password Generator', description: 'Generate strong and secure passwords.' },
         { id: 'urlShortener', icon: 'fas fa-link', title: 'URL Shortener', description: 'Shorten long URLs for easy sharing (placeholder).' },
-        { id: 'imageTool', icon: 'fas fa-image', title: 'Image Tool', description: 'Resize and optimize images.' }
+        { id: 'imageTool', icon: 'fas fa-image', title: 'Image Tool', description: 'Resize and optimize images.' },
+        { id: 'base64Converter', icon: 'fas fa-exchange-alt', title: 'Base64 Converter', description: 'Encode and decode Base64 strings.' },
+        { id: 'jwtDecoder', icon: 'fas fa-lock', title: 'JWT Decoder', description: 'Decode JWT tokens to inspect their contents.' },
+        { id: 'uuidGenerator', icon: 'fas fa-plus-circle', title: 'UUID Generator', description: 'Generate universally unique identifiers.' },
+        { id: 'regexTester', icon: 'fas fa-file-code', title: 'Regex Tester', description: 'Test and validate regular expressions.' },
+        { id: 'jsonFormatter', icon: 'fas fa-file-alt', title: 'JSON Formatter & Validator', description: 'Format and validate JSON data.' },
+        { id: 'timestampConverter', icon: 'fas fa-clock', title: 'Timestamp Converter', description: 'Convert timestamps to human-readable dates and vice versa.' }
       ]
     },
     {

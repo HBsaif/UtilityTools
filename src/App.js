@@ -22,6 +22,12 @@ import TextReverser from './TextReverser';
 import WordCounter from './WordCounter';
 import ImageTool from './ImageTool';
 import UnitConverter from './UnitConverter';
+import Base64Converter from './Base64Converter';
+import JwtDecoder from './JwtDecoder';
+import UuidGenerator from './UuidGenerator';
+import RegexTester from './RegexTester';
+import JsonFormatter from './JsonFormatter';
+import TimestampConverter from './TimestampConverter';
 
 function App() {
   const [selectedModule, setSelectedModule] = useState(null);
@@ -67,6 +73,18 @@ function App() {
         return <div className="tool-container"><WordCounter /></div>;
       case 'imageTool':
         return <div className="tool-container"><ImageTool /></div>;
+      case 'base64Converter':
+        return <div className="tool-container"><Base64Converter /></div>;
+      case 'jwtDecoder':
+        return <div className="tool-container"><JwtDecoder /></div>;
+      case 'uuidGenerator':
+        return <div className="tool-container"><UuidGenerator /></div>;
+      case 'regexTester':
+        return <div className="tool-container"><RegexTester /></div>;
+      case 'jsonFormatter':
+        return <div className="tool-container"><JsonFormatter /></div>;
+      case 'timestampConverter':
+        return <div className="tool-container"><TimestampConverter /></div>;
       default:
         return <Home onSelectModule={setSelectedModule} />;
     }
